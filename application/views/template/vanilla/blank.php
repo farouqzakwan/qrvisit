@@ -98,7 +98,65 @@
         border-radius:25px;
         border-style:none;
       }
+      .content-container
+	{
+		min-height:100vh;
+		-webkit-box-shadow: -8px 2px 9px -3px rgba(222,222,222,0.5),8px 2px 9px -3px rgba(222,222,222,0.5);
+		-moz-box-shadow: -8px 2px 9px -3px rgba(222,222,222,0.5),8px 2px 9px -3px rgba(222,222,222,0.5);
+		box-shadow: -8px 2px 9px -3px rgba(222,222,222,0.5),8px 2px 9px -3px rgba(222,222,222,0.5);
+	}
 
+	.shadow
+	{
+		-webkit-box-shadow: -8px 2px 9px -3px rgba(222,222,222,0.5),8px 2px 9px -3px rgba(222,222,222,0.5);
+		-moz-box-shadow: -8px 2px 9px -3px rgba(222,222,222,0.5),8px 2px 9px -3px rgba(222,222,222,0.5);
+		box-shadow: -8px 2px 9px -3px rgba(222,222,222,0.5),8px 2px 9px -3px rgba(222,222,222,0.5);
+	}
+
+	.form-control-qr
+	{
+		width:100%;
+		border:1px solid #dedede;
+		border-radius:5px;
+	}
+
+	.btn-qr
+	{
+		border-radius:25px;
+		padding:1.5px;
+		min-width:100px;
+		box-shadow:none;
+		padding: 0;
+		border: none;
+		font: inherit;
+		color: inherit;
+	}
+
+	.btn-qr:hover
+	{
+		cursor:pointer;
+	}
+
+	.btn-qr-primary
+	{
+		background-color:#6777ef;
+		color:#fff;
+	}
+	.btn-qr-primary:hover{
+		background-color:rgba(103, 119, 239,0.5);
+		transition:all .5s;
+	}
+
+
+	.btn-qr-primary-alternate
+	{
+		background-color:rgba(103, 119, 239,0.75);
+		color:#fff;
+	}
+	.btn-qr-primary-alternate:hover{
+		background-color:rgba(103, 119, 239,1);
+		transition:all .5s;
+	}
     </style>
     <?php if(!empty($template['stylesheets'])): ?>
         <?php foreach($template['stylesheets'] as $sheet): ?>

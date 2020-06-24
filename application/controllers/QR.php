@@ -12,7 +12,22 @@ class QR extends CI_Controller
     {
         if(empty($company_code)) redirect(dashboard_url());
         $this->template->setTemplate('vanilla',array()) 
+            ->setBody(
+                array('page/qr/list-type'),
+                array(
+                        'company_code' => $company_code,
+                        'employee_url' => register_url('employee/'.$company_code),
+                        'delivery_url' => register_url('delivery/'.$company_code),
+                        'visitor_url' => register_url('visitor/'.$company_code)
+                        ))
+            ->setJs(array('/assets/js/qrcodejs/allcode.js'))
+            ->layout('blank');
+    }
 
+    public function all_type($company_code = null)
+    {
+        if(empty($company_code)) redirect(dashboard_url());
+        $this->template->setTemplate('vanilla',array())    
             ->layout('blank');
     }
 
