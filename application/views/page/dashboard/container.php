@@ -51,7 +51,7 @@
 
 	.btn-qr-primary-alternate
 	{
-		background-color:rgba(103, 119, 239,0.5);
+		background-color:rgba(103, 119, 239,0.75);
 		color:#fff;
 	}
 	.btn-qr-primary-alternate:hover{
@@ -170,7 +170,7 @@
 											
 											<h5 class="text-brand"><a href="<?php echo qr_url('index/'.$company->code); ?>" target="_blank">Get QR Code..</a></h5>
 											<div class="row">	
-												<div class="col-4 text-center mx-auto btn-qr-primary-alternate py-3 rounded-circle">
+												<div class="col-4 text-center mx-auto btn-qr-primary-alternate py-3 rounded-circle shadow">
 													<a href="<?php echo qr_url('index/'.$company->code); ?>" target="_blank" >
 														<img src="<?php echo base_url('assets/images/icons/items/qrcode.png'); ?>" class="img-fluid">
 													</a>
