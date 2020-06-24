@@ -1,6 +1,10 @@
-<div class="hero bg-primary disinfect-cover">
+<div class="hero bg-primary">
     <div class="row">
         <div class="col-12 col-sm-8 mx-auto p-5 bg-white-transparent my-sm-5 ">
+
+            <h1 class="text-hero text-center">Please register before enter premises</h1>
+            <hr class="hr-separator">
+
             <form action="<?php echo base_url('register/save'); ?>" class="form-group">
                 <h6 class="text-dark wow fadeInUp animated"><label>Email Address</label></h6>
                 <input type="email" class="form-control form-control-sm wow fadeInUp animated">
@@ -49,7 +53,9 @@
                     </div>
                 </div>
             </form>
-        
+
+            <?php $this->load->view('page/qr/illustration'); ?>
+
         </div>
     </div>
 </div>

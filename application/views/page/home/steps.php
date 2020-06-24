@@ -1,7 +1,7 @@
 <div class="row">
         <div class="col-12 text-center mt-5 mb-5">
             <h4 class="text-brand-lg text-primary">3 Easy steps</h4>
-            <hr style="background-color:rgba(255, 248, 117,1);width:15%;height:5px;border-radius:25px;border-style:none;">
+            <hr class="hr-separator">
         </div>
         <div class="col-12 col-sm-4 mb-5" style="min-height:10vh;">
             <div class="row">

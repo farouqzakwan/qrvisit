@@ -50,7 +50,11 @@ class Migration_Add_Companies extends CI_Migration
 						'type' 				=> 'VARCHAR',
 						'constraint' 		=> 255,
 				),
-				'is_delete int(1) default 0'
+				'is_delete' => array(
+						'type'              => 'INT',
+						'constraint'        => 1,
+						'default'           => 0                              
+				)
 			));
 			$this->dbforge->add_key('id', TRUE);
 			$this->dbforge->create_table('companies');

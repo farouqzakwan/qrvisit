@@ -22,7 +22,11 @@ class Migration_Add_User_Companies extends CI_Migration
 						'constraint' 		=> 5,
 						'unsigned' 			=> TRUE
 				),
-				'is_delete int(1) default 0'
+				'is_delete' => array(
+						'type'              => 'INT',
+						'constraint'        => 1,
+						'default'           => 0                              
+				)
 			));
 			$this->dbforge->add_key('id', TRUE);
 			$this->dbforge->create_table('user_companies');

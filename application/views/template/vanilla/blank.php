@@ -89,6 +89,16 @@
       {
         height:50px;
       }
+      
+      .hr-separator
+      {
+        background-color:rgba(255, 248, 117,1);
+        width:15%;
+        height:5px;
+        border-radius:25px;
+        border-style:none;
+      }
+
     </style>
     <?php if(!empty($template['stylesheets'])): ?>
         <?php foreach($template['stylesheets'] as $sheet): ?>

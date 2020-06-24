@@ -1,6 +1,6 @@
 <section class="hero bg-primary p-5">
     <h1 class="text-white text-brand text-center text-hero">Keep Track Your Visitor Easily With qrvisit</h1>
-    <hr style="background-color:rgba(255, 248, 117,1);width:15%;height:5px;border-radius:25px;border-style:none;">
+    <hr class="hr-separator">
 
     <div class="row mt-5">
         <div class="col-12 col-sm-4 mx-auto">
