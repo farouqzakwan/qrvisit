@@ -6,22 +6,31 @@
             <hr class="hr-separator">
 
 
-            <form action="" class="form-group">
+            <?php if(!empty($this->session->flashdata('operation_error')) && !empty($this->session->flashdata('error_message'))): ?>
+            <div class="alert alert-danger">
+                <?php echo $this->session->flashdata('error_message'); ?>
+            </div>
+            <?php endif; ?>
+
+            <form action="<?php echo register_url('save_guest'); ?>" class="form-group">
                 <h6 class="text-dark wow fadeInUp animated"><label>Email Address</label></h6>
-                <input type="email" class="form-control form-control-sm wow fadeInUp animated">
+                <input type="email" class="form-control form-control-sm wow fadeInUp animated" name="email">
 
                 <h6 class="text-dark wow fadeInUp animated"><label>Visitor Name</label></h6>
-                <input type="text" class="form-control form-control-sm wow fadeInUp animated">
+                <input type="text" class="form-control form-control-sm wow fadeInUp animated" name="name" required>
 
                 <h6 class="text-dark wow fadeInUp animated"><label>Phone Number</label></h6>
-                <input type="text" class="form-control form-control-sm wow fadeInUp animated">
+                <input type="text" class="form-control form-control-sm wow fadeInUp animated" name="phone_number" required>
 
                 <h6 class="text-dark wow fadeInUp animated"><label>Body Temperature</label></h6>
-                <input type="text" class="form-control form-control-sm wow fadeInUp animated">
+                <input type="text" class="form-control form-control-sm wow fadeInUp animated" name="temperature" required>
 
-                <div class="row">
+                <input type="hidden" name="type" value="<?php echo GUEST_DELIVERY; ?>">
+                <input type="hidden" name="company_code" value="<?php echo $company_code?>">
+
+                <div class="row wow fadeInUp animated">
                     <div class="col-12 col-sm-4">
-                        <button class="btn btn-success btn-block">Submit</button>
+                        <button type="submit" class="btn btn-success btn-block">Submit</button>
                     </div>
                 </div>
             </form>

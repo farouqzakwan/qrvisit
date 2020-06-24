@@ -5,6 +5,12 @@
             <h1 class="text-hero text-center">Please register before enter premises</h1>
             <hr class="hr-separator">
 
+            <?php if(!empty($this->session->flashdata('operation_error')) && !empty($this->session->flashdata('error_message'))): ?>
+            <div class="alert alert-danger">
+                <?php echo $this->session->flashdata('error_message'); ?>
+            </div>
+            <?php endif; ?>
+
             <form action="<?php echo base_url('register/save'); ?>" class="form-group">
                 <h6 class="text-dark wow fadeInUp animated"><label>Email Address</label></h6>
                 <input type="email" class="form-control form-control-sm wow fadeInUp animated">
@@ -48,14 +54,15 @@
                 <div class="row wow fadeInUp animated">
                     <div class="col-12 col-sm-4">
                         <input type="hidden" name="company_code" value="<?php echo $company_code; ?>">
-                        <input type="hidden" name="type" value="<?php echo $type; ?>">
+                        <input type="hidden" name="type" value="<?php echo GUEST_EMPLOYEE; ?>">
+                
+
                         <button class="btn btn-success btn-block">Submit</button>
                     </div>
                 </div>
             </form>
 
             <?php $this->load->view('page/qr/illustration'); ?>
-
         </div>
     </div>
 </div>

@@ -25,6 +25,15 @@ class Model_companies extends CI_Model
 			->result();
 		return $result;
 	}
+
+	public function find_by_code($company_code)
+	{
+		$result = $this->db->select('a.*')
+			->where('a.code',$company_code)
+			->get('companies a')
+			->result();
+		return $result;
+	}
 }
 
 ?>

@@ -58,23 +58,99 @@ class Register extends CI_Controller
 
     public function employee($company_code)
     {
+        $this->load->model('model_companies','company');
+        $company = ($companies = $this->company->find_by_code($company_code))?$companies[0]:null;
+        if(empty($company)) redirect(base_url(''));
+
         $this->template->setTemplate('vanilla',array())    
             ->setBody(array('page/register/employee','page/home/mdl-register'),array('company_code' => $company_code,'type' => 0))
             ->layout('blank');
     }
 
-    public function visitor($company_codes)
+    public function visitor($company_code)
     {
+        $this->load->model('model_companies','company');
+        $company = ($companies = $this->company->find_by_code($company_code))?$companies[0]:null;
+        if(empty($company)) redirect(base_url(''));
+
         $this->template->setTemplate('vanilla',array())    
-        ->setBody(array('page/register/visitor','page/home/mdl-register'),array())
+        ->setBody(array('page/register/visitor','page/home/mdl-register'),array('company_code' => $company_code))
         ->layout('blank');
     }
 
     public function delivery($company_code)
     {
+        $this->load->model('model_companies','company');
+        $company = ($companies = $this->company->find_by_code($company_code))?$companies[0]:null;
+        if(empty($company)) redirect(base_url(''));
+
         $this->template->setTemplate('vanilla',array())    
-            ->setBody(array('page/register/mailman','page/home/mdl-register'),array())
+            ->setBody(array('page/register/mailman','page/home/mdl-register'),array('company_code' => $company_code))
             ->layout('blank');
+    }
+
+
+    public function save_guest()
+    {
+        $this->load->library('form_validation');
+        $this->load->model('model_guests','guest');
+        
+        $this->form_validation->set_rules('name','Name','trim|required',array(
+            'required' => 'Please provide your %s'
+        ));
+
+        $this->form_validation->set_rules('phone_number','Phone Number','trim|required',array(
+            'required' => 'Please provide you %s'
+        ));
+
+        $this->form_validation->set_rules('temperature','Body Temperature','trim|required',array(
+            'required' => 'Please scan your %s before entering premises'
+        ));
+
+        if($this->form_validation->run() == false)
+        {
+            $this->session->set_flashdata('operation_error',true);
+            $this->session->set_flashdata('error_message', validation_errors());
+            switch ($this->input->post('type')) 
+            {
+                case GUEST_VISITOR:
+                    redirect(register_url('visitor/'.$this->input->post('company_code')));
+                    break;
+                
+                case GUEST_DELIVERY:
+                    redirect(register_url('delivery/'.$this->input->post('company_code')));
+                    break;
+
+                case GUEST_EMPLOYEE:
+                    redirect(register_url('employee/'.$this->input->post('company_code')));
+                    break;
+                default:
+                    redirect(register_url('visitor/'.$this->input->post('company_code')));
+                    break;
+            }
+        }else{
+            $this->load->model('model_companies','company');
+            $company = ($companies = $this->company->find_by_code($this->input->post('company_code')))?$companies[0]:null;
+
+            if(!empty($company))
+            {
+                $input = array(
+                    'company_id'        => $company->id,
+                    'email_address'     => (!empty($this->input->post('email')))?$this->input->post('email'):null,
+                    'visitor_name'      => $this->input->post('name'),
+                    'phone_number'      => $this->input->post('phone_number'),
+                    'body_temperature'  => $this->input->post('temperature'),
+                    'type'              => $this->input->post('type'),
+                    'is_delete'         => 0
+                );
+                $this->guest->visit($input,$this->input->post('type'));
+                //display success views
+            }else{
+                $this->session->set_flashdata('operation_error',true);
+                $this->session->set_flashdata('error_message', '<p>Unable to find company.Please scan a valid qr code</p>');
+                //display error views
+            }
+        }
     }
 }
 ?>
