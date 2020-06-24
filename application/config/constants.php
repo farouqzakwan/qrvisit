@@ -108,3 +108,7 @@ defined('APPLICATION_TWITTER_ACCOUNT')          OR define('APPLICATION_TWITTER_A
 defined('APPLICATION_YOUTUBE_ACCOUNT')          OR define('APPLICATION_YOUTUBE_ACCOUNT','https://youtube.com');
 defined('APPLICATION_LINKEDIN_ACCOUNT')         OR define('APPLICATION_LINKEDIN_ACCOUNT','');
 defined('APPLICATION_INSTAGRAM_ACCOUNT')        OR define('APPLICATION_INSTAGRAM_ACCOUNT','https://instagram.com/');
+
+defined('GUEST_VISITOR')                        OR define('GUEST_VISITOR',0);
+defined('GUEST_DELIVERY')                       OR define('GUEST_DELIVERY',1);
+defined('GUEST_EMPLOYEE')                       OR define('GUEST_EMPLOYEE',2);
