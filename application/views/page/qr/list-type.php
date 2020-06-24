@@ -21,10 +21,10 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-12 col-sm-6">
+                        <!-- <div class="col-12 col-sm-6">
                             <h4 class="text-brand">Total visits</h4> 24
-                        </div>
-                        <div class="col-12 col-sm-6">
+                        </div> -->
+                        <div class="col-12 col-sm-6 mx-auto">
                             
                         <div class="row mb-5 p-1">
                             <div class="mx-auto">
@@ -58,10 +58,10 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-12 col-sm-6">
+                        <!-- <div class="col-12 col-sm-6">
                             <h4 class="text-brand">Total visits</h4> 24
-                        </div>
-                        <div class="col-12 col-sm-6">
+                        </div> -->
+                        <div class="col-12 col-sm-6 mx-auto">
                             
                         <div class="row mb-5 p-1">
                             <div class="mx-auto">
@@ -94,10 +94,10 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-12 col-sm-6">
+                        <!-- <div class="col-12 col-sm-6">
                             <h4 class="text-brand">Total visits</h4> 24
-                        </div>
-                        <div class="col-12 col-sm-6">
+                        </div> -->
+                        <div class="col-12 col-sm-6 mx-auto">
                             
                         <div class="row mb-5 p-1">
                             <div class="mx-auto">
