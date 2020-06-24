@@ -159,16 +159,14 @@
 					<?php foreach($companies as $key => $company): ?>
 						<div class="col-12 col-sm-6 mb-3">
 							<div class="card h-100">
-								<div class="card-header bg-primary">
-									<h5 class="text-brand text-white"><?php echo $company->name; ?></h5>
-								</div>
+								
 								<div class="card-body">
 
 
 									<div class="row">
 										<div class="col-12 col-sm-4">
 											
-											<h5 class="text-brand"><a href="<?php echo qr_url('index/'.$company->code); ?>" target="_blank">Get QR Code..</a></h5>
+											<h5 class="text-brand"><a href="<?php echo qr_url('index/'.$company->code); ?>" target="_blank"> <?php echo $company->name; ?></a></h5>
 											<div class="row">	
 												<div class="col-4 text-center mx-auto btn-qr-primary-alternate py-3 rounded-circle shadow">
 													<a href="<?php echo qr_url('index/'.$company->code); ?>" target="_blank" >
@@ -187,6 +185,8 @@
 											<?php echo (!empty($company->postcode))?$company->postcode.',':''; ?>
 											<?php echo (!empty($company->state))?$company->state:''; ?>
 											<?php echo (empty($company->building_info) && empty($company->street_address) && empty($company->city) && empty($company->postcode) && empty($company->state))?'NA':''; ?>
+											<h5 class="text-brand"><a href="<?php echo qr_url('index/'.$company->code); ?>" target="_blank">Get QR Code..</a></h5>
+
 										</div>
 									</div>
 								</div>
