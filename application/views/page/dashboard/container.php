@@ -178,9 +178,9 @@
 											</div>
 										</div>
 										<div class="col-12 col-sm-6">
-											<i class="lni lni-briefcase"></i>  <?php echo $company->name; ?> <br>
-											<i class="lni lni-phone"></i> <?php echo (!empty($company->phone_number))?$company->phone_number:'NA'; ?><br>
-											<i class="lni lni-map-marker"></i>
+											<i class="lni lni-briefcase pr-3"></i>  <?php echo $company->name; ?> <br>
+											<i class="lni lni-phone pr-3"></i> <?php echo (!empty($company->phone_number))?$company->phone_number:'NA'; ?><br>
+											<i class="lni lni-map-marker pr-3"></i>
 											<?php echo (!empty($company->building_info))?$company->building_info.',':''; ?>
 											<?php echo (!empty($company->street_address))?$company->street_address.',':''; ?>
 											<?php echo (!empty($company->city))?$company->city.',':''; ?>
