@@ -89,10 +89,8 @@ class Template{
             (
                 'data'          => $this->template_data,
                 'body'          => $this->body,
-                // 'navbar'
-                // 'breadcrumb'
-                // 'invoice'
-                
+                'javascripts'   => $this->js,
+                'stylesheets'   => $this->css
             ),
             'data'              => $this->body_data,
         );

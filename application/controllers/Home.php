@@ -18,7 +18,7 @@ class Home extends CI_Controller
     function home()
     {
         $this->template->setTemplate('vanilla',array())    
-            ->setBody(array('page/home/index','page/home/mdl-register'),array())
+            ->setBody(array('page/home/index','page/home/mdl-register','page/home/steps','page/qr/illustration'),array())
             ->layout('blank');
     }
 

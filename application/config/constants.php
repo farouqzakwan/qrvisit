@@ -102,9 +102,9 @@ defined('APPLICATION_AUTHOR')                   OR define('APPLICATION_AUTHOR','
 defined('APPLICATION_DESCRIPTION')              OR define('APPLICATION_DESCRIPTION','Record your visitor and employee attendence with QR Application');
 defined('APPLICATION_KEYWORDS')                 OR define('APPLICATION_KEYWORDS','QR visit, QR Code, Covid 19');
 defined('APPLICATION_COMPANY_WEBSITE')          OR define('APPLICATION_COMPANY_WEBSITE','');
-defined('APPLICATION_FACEBOOK_ACCOUNT')         OR define('APPLICATION_FACEBOOK_ACCOUNT','');
+defined('APPLICATION_FACEBOOK_ACCOUNT')         OR define('APPLICATION_FACEBOOK_ACCOUNT','https://facebook.com');
 defined('APPLICATION_CONTACT_EMAIL')            OR define('APPLICATION_CONTACT_EMAIL','farouqzakwan@gmail.com');
-defined('APPLICATION_TWITTER_ACCOUNT')          OR define('APPLICATION_TWITTER_ACCOUNT','');
-defined('APPLICATION_YOUTUBE_ACCOUNT')          OR define('APPLICATION_YOUTUBE_ACCOUNT','');
+defined('APPLICATION_TWITTER_ACCOUNT')          OR define('APPLICATION_TWITTER_ACCOUNT','https://twitter.com/');
+defined('APPLICATION_YOUTUBE_ACCOUNT')          OR define('APPLICATION_YOUTUBE_ACCOUNT','https://youtube.com');
 defined('APPLICATION_LINKEDIN_ACCOUNT')         OR define('APPLICATION_LINKEDIN_ACCOUNT','');
-defined('APPLICATION_INSTAGRAM_ACCOUNT')        OR define('APPLICATION_INSTAGRAM_ACCOUNT','');
+defined('APPLICATION_INSTAGRAM_ACCOUNT')        OR define('APPLICATION_INSTAGRAM_ACCOUNT','https://instagram.com/');

@@ -26,9 +26,6 @@
     <!-- Responsive Style -->
     <link rel="stylesheet" type="text/css" href="<?php echo template_url('vanilla','assets/css/responsive.css'); ?>">
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="<?php echo base_url('/assets/font/elegant_font/HTML CSS/style.css'); ?>">
-
     <style>
       .append-group-text
       {
@@ -78,6 +75,11 @@
         font-size:2.5em;
       }
 
+      .text-color-secondary
+      {
+        color:rgba(255, 248, 117,1);
+      }
+
       .text-hero
       {
         font-family: 'Caveat', cursive;
@@ -88,6 +90,11 @@
         height:50px;
       }
     </style>
+    <?php if(!empty($template['stylesheets'])): ?>
+        <?php foreach($template['stylesheets'] as $sheet): ?>
+          <link rel="stylesheet" href="<?php echo base_url($sheet); ?>">
+        <?php endforeach; ?>
+    <?php endif; ?>
   </head>
   <body>
 
@@ -119,7 +126,12 @@
     <script src="<?php echo template_url('vanilla','assets/js/jquery.slicknav.js'); ?>"></script>
     <script src="<?php echo template_url('vanilla','assets/js/main.js'); ?>"></script>
     <script src="<?php echo template_url('vanilla','assets/js/form-validator.min.js'); ?>"></script>
-    <script src="<?php echo template_url('vanilla','assets/js/contact-form-script.min.js'); ?>"></script>  
-    <script src="<?php echo template_url('vanilla',''); ?>"></script>
+    <script src="<?php echo template_url('vanilla','modules/qrcodejs/qrcode.js'); ?>"></script>
+    <?php if(!empty($template['javascripts'])): ?>
+        <?php foreach($template['javascripts'] as $script): ?>
+          <script src="<?php echo base_url($script); ?>"></script>
+        <?php endforeach; ?>
+    <?php else: ?>
+    <?php endif; ?>
   </body>
 </html>

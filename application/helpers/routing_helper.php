@@ -30,6 +30,12 @@
         }
 	}
     
+    if(!function_exists('qr_url')){
+        function qr_url($path = null){
+            return base_url('/qr/'.$path);
+        }
+    }
+    
 	if(!function_exists('register_url')){
         function register_url($path = null){
             return base_url('/register/'.$path);

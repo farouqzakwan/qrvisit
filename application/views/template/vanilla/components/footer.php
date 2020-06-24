@@ -1,5 +1,5 @@
 <!-- Footer Section Start -->
-<footer id="footer" class="footer-area section-padding">
+<footer id="footer" class="footer-area section-padding d-print-none">
     <div class="container">
     <div class="container">
         <div class="row">
@@ -7,7 +7,10 @@
             <div class="footer-logo mb-3">
             
             </div>
-            <p>The sole reason we are in business is to make life less difficult for our clients.</p>
+            <p>
+                A safe and simple alternative to pen and paper check-ins. Help fight COVID-19 by using our free web app to trace who’s coming and going from your business.                
+            </p>
+            <span class="text-brand text-primary">#kitajagakita</span>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-delay="0.4s">
         </div>

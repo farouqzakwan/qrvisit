@@ -1,4 +1,4 @@
-<section id="copyright">
+<section class="d-print-none" id="copyright">
     <div class="container">
     <div class="row">
         <div class="col-md-12 wow fadeInUp">

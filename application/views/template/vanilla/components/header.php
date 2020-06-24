@@ -11,7 +11,7 @@
                     <span class="icon-menu"></span>
                 </button>
                 <a href="<?php echo base_url(); ?>" class="navbar-brand text-uppercase py-3" style="z-index:999;">
-                    <img src="<?php echo base_url('/assets/images/icons/favicon/icon.png'); ?>" alt="icon qrvisit" class="img img-fluid icon-size">  <span class="text-brand text-lowercase"><?php echo APPLICATION_NAME; ?></span>
+                    <img src="<?php echo base_url('/assets/images/icons/items/qr-code-scan.png'); ?>" alt="icon qrvisit" class="img img-fluid icon-size">  <span class="text-brand text-lowercase"><?php echo APPLICATION_NAME; ?></span>
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="main-navbar">
