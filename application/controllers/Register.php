@@ -109,6 +109,7 @@ class Register extends CI_Controller
 
         if($this->form_validation->run() == false)
         {
+            die(debug(validation_errors()));
             $this->session->set_flashdata('operation_error',true);
             $this->session->set_flashdata('error_message', validation_errors());
             switch ($this->input->post('type')) 

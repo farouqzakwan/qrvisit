@@ -11,7 +11,7 @@
             </div>
             <?php endif; ?>
 
-            <form action="<?php echo base_url('register/save'); ?>" class="form-group">
+            <form action="<?php echo base_url('register/save'); ?>" class="form-group" method="post">
                 <h6 class="text-dark wow fadeInUp animated"><label>Email Address</label></h6>
                 <input type="email" class="form-control form-control-sm wow fadeInUp animated">
 

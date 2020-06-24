@@ -48,6 +48,17 @@
 		transition:all .5s;
 	}
 
+
+	.btn-qr-primary-alternate
+	{
+		background-color:rgba(103, 119, 239,0.5);
+		color:#fff;
+	}
+	.btn-qr-primary-alternate:hover{
+		background-color:rgba(103, 119, 239,1);
+		transition:all .5s;
+	}
+
 	.btn-qr-warning
 	{
 
@@ -62,10 +73,9 @@
 	{
 
 	}
-
 </style>
 <section class="container content-container">
-
+<!-- 
 	<div class="row">
 		<div class="col-12 col-sm-4 pt-5">
 			<div class="card">
@@ -124,7 +134,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<div class="row">
 		<div class="col-12 mt-5">
@@ -146,26 +156,55 @@
 
 			<?php if(!empty($companies)): ?>
 				<div class="row">
-					<div class="col-12">
-						<ul class="list-group">
-							<?php foreach($companies as $key => $company): ?>
-							<li class="list-group-item">
-								<?php echo $company->name; ?>
-							</li>
-							<?php endforeach;?>
-						</ul>
-					</div>
+					<?php foreach($companies as $key => $company): ?>
+						<div class="col-12 col-sm-6 mb-3">
+							<div class="card h-100">
+								<div class="card-header bg-primary">
+									<h5 class="text-brand text-white"><?php echo $company->name; ?></h5>
+								</div>
+								<div class="card-body">
+
+
+									<div class="row">
+										<div class="col-12 col-sm-4">
+											
+											<h5 class="text-brand"><a href="<?php echo qr_url('index/'.$company->code); ?>" target="_blank">Get QR Code..</a></h5>
+											<div class="row">	
+												<div class="col-4 text-center mx-auto btn-qr-primary-alternate py-3 rounded-circle">
+													<a href="<?php echo qr_url('index/'.$company->code); ?>" target="_blank" >
+														<img src="<?php echo base_url('assets/images/icons/items/qrcode.png'); ?>" class="img-fluid">
+													</a>
+												</div>
+											</div>
+										</div>
+										<div class="col-12 col-sm-6">
+											<i class="lni lni-briefcase"></i>  <?php echo $company->name; ?> <br>
+											<i class="lni lni-phone"></i> <?php echo (!empty($company->phone_number))?$company->phone_number:'NA'; ?><br>
+											<i class="lni lni-map-marker"></i>
+											<?php echo (!empty($company->building_info))?$company->building_info.',':''; ?>
+											<?php echo (!empty($company->street_address))?$company->street_address.',':''; ?>
+											<?php echo (!empty($company->city))?$company->city.',':''; ?>
+											<?php echo (!empty($company->postcode))?$company->postcode.',':''; ?>
+											<?php echo (!empty($company->state))?$company->state:''; ?>
+											<?php echo (empty($company->building_info) && empty($company->street_address) && empty($company->city) && empty($company->postcode) && empty($company->state))?'NA':''; ?>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					<?php endforeach;?>
 				</div>
 					<?php else: ?>
 				<div class="row">
 					<div class="col-6 p-5 mx-auto">
-						<img src="<?php echo base_url('assets/images/icons/items/graph.png'); ?>" alt="" class="img img-fluid">
+						<img src="<?php echo base_url('assets/images/illustrations/phone_contact_tracing.png'); ?>" alt="" class="img img-fluid">
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-12 mb-5 text-center">
 						<h4 class="text-primary mt-3 text-brand-lg">Company List Empty</h4>
 						<p class="text-brand">click on ..</p>
+						<i class="lni lni-pointer-down"></i>
 						<br>
 						<button class="btn-qr btn-qr-primary" data-toggle="modal" data-target="#mdl-add-company">
 							<i class="lni lni-plus"></i>
