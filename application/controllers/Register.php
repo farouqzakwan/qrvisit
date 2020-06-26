@@ -40,6 +40,7 @@ class Register extends CI_Controller
 
             $this->session->set_flashdata('register_error',true);
             $this->session->set_flashdata('error_message', validation_errors());
+
         }
         else
         {
@@ -93,6 +94,7 @@ class Register extends CI_Controller
     public function save_guest()
     {
         $this->load->library('form_validation');
+        $this->load->library('user_agent');
         $this->load->model('model_guests','guest');
         
         $this->form_validation->set_rules('name','Name','trim|required',array(
@@ -109,7 +111,6 @@ class Register extends CI_Controller
 
         if($this->form_validation->run() == false)
         {
-            die(debug(validation_errors()));
             $this->session->set_flashdata('operation_error',true);
             $this->session->set_flashdata('error_message', validation_errors());
             switch ($this->input->post('type')) 
@@ -145,11 +146,19 @@ class Register extends CI_Controller
                     'is_delete'         => 0
                 );
                 $this->guest->visit($input,$this->input->post('type'));
+
+                $this->session->set_flashdata('success_message','Thanks for clock in before you enter.');
                 //display success views
             }else{
                 $this->session->set_flashdata('operation_error',true);
                 $this->session->set_flashdata('error_message', '<p>Unable to find company.Please scan a valid qr code</p>');
-                //display error views
+            }
+
+            if($this->agent->is_referral())
+            {
+                redirect($this->agent->referrer());
+            }else{
+                redirect(dashboard_url(''));
             }
         }
     }
