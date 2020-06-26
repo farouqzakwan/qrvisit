@@ -195,11 +195,33 @@
     <script src="<?php echo template_url('vanilla','assets/js/main.js'); ?>"></script>
     <script src="<?php echo template_url('vanilla','assets/js/form-validator.min.js'); ?>"></script>
     <script src="<?php echo template_url('vanilla','modules/qrcodejs/qrcode.js'); ?>"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <?php if(!empty($template['javascripts'])): ?>
         <?php foreach($template['javascripts'] as $script): ?>
           <script src="<?php echo base_url($script); ?>"></script>
         <?php endforeach; ?>
     <?php else: ?>
     <?php endif; ?>
+    <script>
+      $(function(){
+        <?php if(!empty($this->session->flashdata('error_message'))): ?>
+          Swal.fire({
+            title: 'Error!',
+            html: '<?php echo (!empty($this->session->flashdata('error_message')))?trim($this->session->flashdata('error_message')):''; ?>',
+            icon: 'error',
+          });
+        <?php endif;?>
+
+        <?php if(!empty($this->session->flashdata('success_message'))): ?>
+          Swal.fire({
+              title: 'Success',
+              html: '<?php echo (!empty($this->session->flashdata('success_message')))?$this->session->flashdata('success_message'):''; ?>',
+              icon: 'success',
+          });
+        <?php endif; ?>
+
+      });
+    
+    </script>
   </body>
 </html>

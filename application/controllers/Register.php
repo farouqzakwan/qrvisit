@@ -40,10 +40,10 @@ class Register extends CI_Controller
 
             $this->session->set_flashdata('register_error',true);
             $this->session->set_flashdata('error_message', validation_errors());
-            redirect(base_url());
         }
         else
         {
+            $this->session->set_flashdata('success_message','<p>You have successfully register a new account with us.</p>');
             $input = array
             (
                 'first_name'        => $this->input->post('first_name'),
@@ -52,8 +52,8 @@ class Register extends CI_Controller
                 'password'          => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
             );
             $this->users->create_new($input); 
-            redirect(home_url('success_register'));
         }
+        redirect(base_url());
     }
 
     public function employee($company_code)

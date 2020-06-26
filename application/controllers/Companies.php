@@ -36,7 +36,13 @@ class Companies extends CI_Controller
 				'code'	=> uniqid(),
 				'is_delete' => 0
 			);
-			$this->company->create_new($input,user_id());
+			$company_id = $this->company->create_new($input,user_id());
+			if(!empty($company_id))
+			{
+				$this->session->set_flashdata('success_message','You have successfully create a new company.');
+			}else{
+				$this->session->set_flashdata('error_message','Unable to create a new company.');
+			}
 		}
 		redirect(dashboard_url());
     }
