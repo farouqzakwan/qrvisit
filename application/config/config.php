@@ -27,7 +27,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 if(isset($_SERVER['HTTP_HOST'])) //if have domain
 {
     $config['base_url'] = isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) == 'on' ? 'https' : 'http';
-    $config['base_url'] .= '://'. $_SERVER['HTTP_HOST'].'/'.APPLICATION_DIRECTORY;
+    $config['base_url'] .= '://'. $_SERVER['HTTP_HOST'].'/';
+
+    // var_dump($config['base_url']);die();
 }
 else { //if does not have any domain
     $config['base_url'] = 'http://localhost/'.APPLICATION_DIRECTORY.'/';
